@@ -1,0 +1,74 @@
+.outer{
+    background-color: white;
+}
+.head{
+    padding: 20px 60px;
+    width: fit-content;
+    background-color: #ffffff;
+}
+
+.btn{
+    background-color: #ffffff;
+    color: #53555a;
+    
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    border: none;
+    border: 2px solid  #e7e8ea;
+    border-radius: 8px;
+
+    padding: 8px 15px;
+    
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+
+
+.onselect{
+    width: 300px;
+    position: fixed;
+    top: 65px;
+    left: 60px;
+    
+    padding: 15px 20px;
+    color: #a1a1a3;
+    font-weight: 600;
+    background-color: #f8f9fb;
+    border: 1px solid #e4e4e6;
+    border-radius: 10px;
+}
+
+.onselectcontainer{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+
+.onSelectSubContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    label{
+        margin-left: 20px;
+    }
+}
+
+
+
+
+.body{
+    background-color: #f4f5f8;
+}
+
+.card{
+    padding: 20px 60px;
+}
