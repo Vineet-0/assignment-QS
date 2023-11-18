@@ -55,7 +55,7 @@ function GroupByUsers({ data,grouping, ordering }) {
                         <CardBody key={ticket.id} ticket={ticket} users={data.users} grouping={grouping} />
                       ))
                     ) : (
-                      <p>No tickets for User Name {userName}</p>
+                      <></>
                     )
                 )}
                 {ordering === 'Title' && (
@@ -66,7 +66,7 @@ function GroupByUsers({ data,grouping, ordering }) {
                         <CardBody key={ticket.id} ticket={ticket} users={data.users} grouping={grouping}/>
                       ))
                     ) : (
-                      <p>No tickets for User Name {userName}</p>
+                      <></>
                     )
                 )}
               </div>

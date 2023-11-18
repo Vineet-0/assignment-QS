@@ -53,7 +53,7 @@ function GroupByPriority({ data, grouping,ordering }) {
                         <CardBody key={ticket.id} ticket={ticket} users={data.users} grouping={grouping} />
                       ))
                     ) : (
-                      <p>No tickets for {priority.icon}</p>
+                      <></>
                     )
                 )}
                 {ordering === 'Title' && (
@@ -64,7 +64,7 @@ function GroupByPriority({ data, grouping,ordering }) {
                         <CardBody key={ticket.id} ticket={ticket} users={data.users} grouping={grouping} />
                       ))
                     ) : (
-                      <p>No tickets for {priority.icon}</p>
+                      <></>
                     )
                 )}
             </div>

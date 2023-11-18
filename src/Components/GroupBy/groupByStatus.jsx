@@ -60,7 +60,7 @@ function GroupByStatus({ data, grouping, ordering }) {
                         <CardBody key={ticket.id} ticket={ticket} users={data.users} grouping={grouping} />
                     ))
                     ) : (
-                    <p>No tickets for {status.title}</p>
+                    <></>
                     )
                 )}
                 {ordering === 'Title' && (
@@ -71,7 +71,7 @@ function GroupByStatus({ data, grouping, ordering }) {
                             <CardBody key={ticket.id} ticket={ticket} users={data.users} grouping={grouping} />
                         ))
                     ) : (
-                    <p>No tickets for {status.title}</p>
+                    <></>
                     )
                 )}
             </div>

@@ -19,3 +19,10 @@
 .bg-trans{
   background-color: transparent;
 }
+
+@media only screen and (max-width: 767px) {
+  .HorizontalAlign {
+    flex-direction: column;
+    gap: 0px;
+  }
+}

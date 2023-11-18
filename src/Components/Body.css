@@ -6,6 +6,13 @@
     background-color: #ffffff;
 }
 
+@media only screen and (max-width: 767px) {
+    .head{
+        padding: 10px 30px;
+        background-color: #ffffff;
+    }
+}
+
 .btn{
     background-color: #ffffff;
     color: #53555a;
@@ -38,7 +45,7 @@
     top: 65px;
     left: 60px;
 
-    width: 300px;
+    width: 250px;
     
     padding: 15px 20px;
     color: #a1a1a3;
@@ -71,7 +78,12 @@
     background-color: #f4f5f8;
 }
 
-
 .groupCard{
     padding:0px 50px;
+}
+
+@media only screen and (max-width: 767px) {
+    .groupCard{
+        padding:0px 20px;
+    }
 }

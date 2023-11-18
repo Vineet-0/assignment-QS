@@ -59,24 +59,26 @@
 }
 
 .active{
-    background-color: greenyellow;
+    z-index: 10;
+    background-color: #a6a9ad;
     width:8px;
     height: 8px;
     position: relative;
-    bottom: 15px;
-    right: -350px;
+    top: 15px;
+    right: -20px;
     border: 2px solid white;
     border-radius: 50%;
     margin-bottom: -15px;
 }
 
 .inactive{
+    z-index: 10;
     background-color: #a6a9ad;
     width:8px;
     height: 8px;
     position: relative;
-    bottom: 15px;
-    right: -350px;
+    top: 15px;
+    right: -20px;
     border: 2px solid white;
     border-radius: 50%;
     margin-bottom: -15px;

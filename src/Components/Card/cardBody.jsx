@@ -48,13 +48,15 @@ const CardBody = ({ ticket, users, grouping }) => {
         <div className='top'>
             <div className='userId'>{ticket.id}</div>
               {grouping !== 'User' && (
-                  <div className='userIcon'>
-                    {userName}
+                  <div className='bg-trans'>
+                      {grouping !== 'User' && active && ( <div className='active'></div>) }
+                      {grouping !== 'User' && !active  && ( <div className='inactive'></div> )}
+                    <div className='userIcon'>
+                      {userName}
+                    </div>
                   </div>  
               )}
         </div>
-        {grouping !== 'User' && active && ( <div className='active'></div>) }
-        {grouping !== 'User' && !active  && ( <div className='inactive'></div> )}
         <div className='middle'>
             {grouping !== 'Status' && (
                 <div className='status'>
