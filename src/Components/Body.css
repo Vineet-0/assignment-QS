@@ -33,10 +33,11 @@
 
 
 .onselect{
-    width: 300px;
     position: fixed;
     top: 65px;
     left: 60px;
+
+    width: 300px;
     
     padding: 15px 20px;
     color: #a1a1a3;
@@ -69,6 +70,7 @@
     background-color: #f4f5f8;
 }
 
-.card{
-    padding: 20px 60px;
+
+.groupCard{
+    padding:0px 50px;
 }

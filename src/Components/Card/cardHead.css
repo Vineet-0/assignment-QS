@@ -1,0 +1,35 @@
+.HeadTop{
+    /* width: 500px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 15px;
+    .title{
+        color: black;
+        font-weight: bold;
+    }
+    .number{
+       color: #8c8f94;
+    }
+}
+
+.right{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+    .plus{
+        color: #8c8f94;
+    }
+
+    .threeDot{
+        font-weight: bold;
+    }
+}

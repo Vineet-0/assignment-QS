@@ -1,7 +1,7 @@
 import React from 'react';
-import './Card.css';
+import './cardBody.css';
 
-const Card = ({ ticket , users }) => {
+const CardBody = ({ ticket , users }) => {
 
     const user = users.find(user => user.id === ticket.userId);
     return (
@@ -24,4 +24,4 @@ const Card = ({ ticket , users }) => {
     );
 };
 
-export default Card;
+export default CardBody;

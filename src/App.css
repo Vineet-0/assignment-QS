@@ -5,3 +5,13 @@
 .bg-white{
   background-color: white;
 }
+
+.HorizontalAlign{
+  display: flex;
+  overflow:scroll;
+  gap:40px;
+}
+
+.HorizontalAlign::-webkit-scrollbar {
+  display: none;
+}

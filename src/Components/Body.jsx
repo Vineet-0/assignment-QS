@@ -1,5 +1,5 @@
 import React, { useState , useEffect } from 'react'
-import Card from './Card'
+import Card from './Card/cardBody.jsx'
 import './Body.css'
 
 import GroupByPriority from './GroupBy/groupByPriority.jsx'
@@ -54,6 +54,7 @@ function Body() {
     };
 
     const renderGroupingComponent = () => {
+        console.log(data);
         switch (selectedGrouping) {
             case 'Status':
                 return <GroupByStatus data={data} ordering={selectedOrdering} />;
@@ -101,12 +102,11 @@ function Body() {
                 </div>
             )}
             <div className='body'>
-                <div className='cards'>
 
                     {data ? (
-                        <>
+                        <div className='groupCard'>
                         {renderGroupingComponent()}
-                        </>
+                        </div>
                     ) : (
                         <p>Loading...</p>
                     )}
@@ -121,7 +121,6 @@ function Body() {
                     ) : (
                     <p>Loading...</p>
                     )} */}
-                </div>
             </div>
         </div>
     )

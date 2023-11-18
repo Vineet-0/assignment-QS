@@ -1,10 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import Card from '../Card';
+import React from 'react';
+import CardHead from '../Card/cardHead';
+import CardBody from '../Card/cardBody';
+import OrderByTitle from '../OrderBy/orderByTitle'; // Import the OrderByTitle component
+import './groupBy.css';
 
-function GroupByPriority({ data }) {
-  const [groupedTickets, setGroupedTickets] = useState({});
+import { MdSignalCellularAlt, MdSignalCellularAlt2Bar, MdSignalCellularAlt1Bar } from "react-icons/md";
 
-  useEffect(() => {
+const priorities = [
+  {
+    id: 4,
+    name: 'Urgent',
+    icon: '🔥', // Urgent
+  },
+  {
+    id: 3,
+    name: 'High',
+    icon: <MdSignalCellularAlt />, // High
+  },
+  {
+    id: 2,
+    name: 'Medium',
+    icon: <MdSignalCellularAlt2Bar />, // Medium
+  },
+  {
+    id: 1,
+    name: 'Low',
+    icon: <MdSignalCellularAlt1Bar />, // Low
+  },
+  {
+    id: 0,
+    name: 'No Priority',
+    icon: '❓', // No Priority
+  }
+];
+
+function GroupByPriority({ data, ordering }) {
+  const [groupedTickets, setGroupedTickets] = React.useState({});
+
+  React.useEffect(() => {
     if (data) {
       // Group tickets by priority
       const groupedData = data.tickets.reduce((acc, ticket) => {
@@ -20,33 +53,33 @@ function GroupByPriority({ data }) {
     }
   }, [data]);
 
-  const priorityNames = {
-    4: 'Urgent',
-    3: 'High',
-    2: 'Medium',
-    1: 'Low',
-    0: 'No Priority'
-  };
-
-  const priorities = [4, 3, 2, 1, 0]; // Reverse the order
-
   return (
     <div>
       {groupedTickets && Object.keys(groupedTickets).length > 0 ? (
-        <>
+        <div className='HorizontalAlign'>
           {priorities.map(priority => (
-            <div key={priority}>
-              <h2>{priorityNames[priority]}</h2>
-              {groupedTickets[priority] ? (
-                groupedTickets[priority].map(ticket => (
-                  <Card key={ticket.id} ticket={ticket} users={data.users} />
-                ))
+            <div key={priority.id} className='CardWidth'>
+              <CardHead
+                title= {priority.name}
+                number = {groupedTickets[priority.id]?.length || 0}
+                icon={priority.icon}
+              />
+              {ordering === 'Priority' ? (
+                // Render Card component for Priority ordering
+                groupedTickets[priority.id] ? (
+                  groupedTickets[priority.id].map(ticket => (
+                    <CardBody key={ticket.id} ticket={ticket} users={data.users} />
+                  ))
+                ) : (
+                  <p>No tickets for {priority.icon}</p>
+                )
               ) : (
-                <p>No tickets for {priorityNames[priority]}</p>
+                // Render OrderByTitle component for Title ordering
+                <OrderByTitle tickets={groupedTickets[priority.id]} />
               )}
             </div>
           ))}
-        </>
+        </div>
       ) : (
         <p>Loading...</p>
       )}
@@ -55,27 +88,3 @@ function GroupByPriority({ data }) {
 }
 
 export default GroupByPriority;
-
-
-// import React, { useState , useEffect } from 'react'
-// import Card from '../Card'
-
-// function groupByPriority({ data }) {
-
-//     return (
-//         <div>
-//             {data ? (
-//                 <>
-//                     <h2>Tickets</h2>
-//                         {data.tickets.map(ticket => (
-//                             <Card key={ticket} ticket={ticket} users={data.users} />
-//                         ))}
-//                 </>
-//                 ) : (
-//                 <p>Loading...</p>
-//             )}
-//         </div>
-//     )
-// }
-
-// export default groupByPriority;

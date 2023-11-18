@@ -1,32 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import Card from '../Card';
+import CardHead from '../Card/cardHead';
+import CardBody from '../Card/cardBody';
+import './groupBy.css';
 
-function GroupByUsers({ data }) {
+function GroupByUsers({ data, Ordering }) {
   const [groupedTickets, setGroupedTickets] = useState({});
 
   useEffect(() => {
     if (data) {
-      // Group tickets by user
+      // Group tickets by user name
       const groupedData = data.tickets.reduce((acc, ticket) => {
-        const userId = ticket.userId;
-        if (!acc[userId]) {
-          acc[userId] = [];
+        const user = data.users.find(user => user.id === ticket.userId);
+        const userName = user ? user.name : 'Unknown';
+
+        if (!acc[userName]) {
+          acc[userName] = [];
         }
-        acc[userId].push(ticket);
+        acc[userName].push(ticket);
         return acc;
       }, {});
 
       // Sort tickets within each user group by user name
-      Object.keys(groupedData).forEach(userId => {
-        groupedData[userId].sort((a, b) => {
-          const userA = data.users.find(user => user.id === a.userId);
-          const userB = data.users.find(user => user.id === b.userId);
-
-          if (userA && userB) {
-            return userA.name.localeCompare(userB.name);
-          }
-
-          return 0;
+      Object.keys(groupedData).forEach(userName => {
+        groupedData[userName].sort((a, b) => {
+          return a.title.localeCompare(b.title); // You can change the sorting criteria as needed
         });
       });
 
@@ -37,20 +34,34 @@ function GroupByUsers({ data }) {
   return (
     <div>
       {groupedTickets && Object.keys(groupedTickets).length > 0 ? (
-        <>
-          {Object.keys(groupedTickets).map(userId => (
-            <div key={userId}>
-              <h2>User ID: {userId}</h2>
-              {groupedTickets[userId] ? (
-                groupedTickets[userId].map(ticket => (
-                  <Card key={ticket.id} ticket={ticket} users={data.users} />
+        <div className='HorizontalAlign'>
+          {Object.keys(groupedTickets)
+            .sort((a, b) => a.localeCompare(b))
+            .map(userName => (
+              <div key={userName} className='CardWidth'>
+                <CardHead title={userName} number={groupedTickets[userName]?.length || 0}/>
+                {groupedTickets[userName] ? (
+                  groupedTickets[userName].map(ticket => (
+                    <CardBody key={ticket.id} ticket={ticket} users={data.users} />
+                  ))
+                ) : (
+                  <p>No tickets for User Name {userName}</p>
+                )}
+              </div>
+            ))}
+          {/* {Object.keys(groupedTickets).map(userName => (
+            <div key={userName}>
+              <CardHead title={userName} />
+              {groupedTickets[userName] ? (
+                groupedTickets[userName].map(ticket => (
+                  <CardBody key={ticket.id} ticket={ticket} users={data.users} />
                 ))
               ) : (
-                <p>No tickets for User ID {userId}</p>
+                <p>No tickets for User Name {userName}</p>
               )}
             </div>
-          ))}
-        </>
+          ))} */}
+        </div>
       ) : (
         <p>Loading...</p>
       )}
@@ -59,6 +70,7 @@ function GroupByUsers({ data }) {
 }
 
 export default GroupByUsers;
+
 
 
 // import React, { useState , useEffect } from 'react'

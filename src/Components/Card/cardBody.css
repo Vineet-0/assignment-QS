@@ -6,10 +6,11 @@
     
     
     background-color: #f4f5f8;
-    width: 600px;
+    /* width: 600px; */
     color: black;
     padding: 20px;
     border: 2px solid red;
+    margin-bottom: 15px;
 }
 
 .top{
