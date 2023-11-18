@@ -72,3 +72,12 @@
         padding-right: 5px;
     }
 }
+
+@media only screen and (max-width: 767px) {
+    .container{
+        margin: 0px 20px;
+    }
+    .HeadTop{
+        margin: 0px 20px;
+    }
+}
