@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import React from 'react'
-import Body from './Components/Body';
+import Body from './Components/board';
 import './App.css';
 
 function App() {

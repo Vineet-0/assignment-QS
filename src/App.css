@@ -8,8 +8,8 @@
 
 .HorizontalAlign{
   display: flex;
-  overflow:scroll;
-  gap:40px;
+  overflow: scroll;
+  gap: 40px;
 }
 
 .HorizontalAlign::-webkit-scrollbar {
@@ -28,8 +28,8 @@
 
 .backLog{
   color: #e3e3e4;
-  width: 19px;
-  height: 19px;
+  width: 20px;
+  height: 20px;
   font-weight: bold;
 }
 
@@ -51,26 +51,16 @@
 }
 
 .todo{
-  color: #f4f5f8;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  border: 2px solid #e3e3e4;
-  font-weight: bold;
-}
-.todoB{
-  color: #ffffff;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  border: 2px solid #e3e3e4;
+  color: #e3e3e4;
+  width: 22px;
+  height: 22px;
   font-weight: bold;
 }
 
 .cancel{
   color:#94a2b2;
-  width: 20px;
-  height: 20px;
+  width: 21px;
+  height: 21px;
 }
 
 .urgent{

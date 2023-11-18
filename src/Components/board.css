@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 .head{
     padding: 20px 60px;
     background-color: #ffffff;
@@ -29,16 +32,68 @@
 
 
 
+.custom-select {
+    min-width: 100px;
+    z-index: 9;
+    background-color: #fff;
+    /* position: relative; */
+}
+
+select {
+    appearance: none;
+    /*  safari  */
+    -webkit-appearance: none;
+    /*  other styles for aesthetics */
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 4px 6px;
+    background-color: transparent;
+    /* background-color: #fff; */
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    color: #000;
+    cursor: pointer;
+}
+
+/* .custom-select::before,
+.custom-select::after {
+    --size: 0.3rem;
+    content: "";
+    position: absolute;
+    right: 1rem;
+    pointer-events: none;
+} */
+
+/* .custom-select::before {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: var(--size) solid black;
+    top: 40%;
+}
+
+.custom-select::after {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-top: var(--size) solid black;
+    top: 55%;
+} */
+
+
+
+
+
+
 .onselect{
     z-index: 10;
     position: absolute;
     top: 65px;
     left: 60px;
 
-    width: 250px;
-    
+    width: 300px;
     padding: 15px 20px;
     color: #a1a1a3;
+
     font-weight: 600;
     background-color: #f8f9fb;
     border: 1px solid #e4e4e6;
@@ -56,10 +111,28 @@
     display: flex;
     flex-direction: row;
     background-color: transparent;
-    /* background-color: #f8f9fb; */
+    align-items: center;
     justify-content: space-between;
     text-decoration: none;
 }
+
+.pos1{
+    position: absolute;
+    z-index: 10;
+    top:22px;
+    right: 25px;
+    background-color: transparent;
+}
+
+.pos2{
+    position: absolute;
+    z-index: 10;
+    top:65px;
+    right: 25px;
+    background-color: transparent;
+}
+
+
 
 
 

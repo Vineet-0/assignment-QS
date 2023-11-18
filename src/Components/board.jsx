@@ -1,53 +1,47 @@
 import React, { useState , useEffect } from 'react'
-import Card from './Card/cardBody.jsx'
-import './Body.css'
+import './board.css'
 
 import GroupByPriority from './GroupBy/groupByPriority.jsx'
 import GroupByStatus from './GroupBy/groupByStatus.jsx'
 import GroupByUser from './GroupBy/groupByUser.jsx'
 
-
-import { FaChevronDown } from "react-icons/fa";
 import { ImEqualizer } from "react-icons/im";
+import { FaChevronDown } from "react-icons/fa";
 
-// import { FaSearch , FaPlus , FaPlay , FaTv } from "react-icons/fa";
-import getBodyData from '../Services/GlobalAPI'
+import getBodyData from '../Services/GlobalAPI.jsx'
 
 function Body() {
     const [data, setData] = useState(null);
+
     const [isOptionsVisible, setIsOptionsVisible] = useState(false);
+
     const [selectedGrouping, setSelectedGrouping] = useState('Status');
     const [selectedOrdering, setSelectedOrdering] = useState('Priority');
 
     
     useEffect(() => {
-        // Call the function that performs the Axios request
+
         getBodyData()
-          .then(response => {
-            // Access the data property
-            const responseData = response.data;
-    
-            // Set the data to your component state
-            setData(responseData);
-          })
-          .catch(error => {
-            // Handle errors here
-            console.error(error);
-          });
-      }, []);
+            .then(response => {
+                setData(response.data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, []);
 
     const handleButtonClick = () => {
-    setIsOptionsVisible(!isOptionsVisible);
+        setIsOptionsVisible(!isOptionsVisible);
     };
 
     const handleGroupingChange = (event) => {
-    setSelectedGrouping(event.target.value);
-    setIsOptionsVisible(false);
+        setSelectedGrouping(event.target.value);
+        setIsOptionsVisible(false);
     };
 
     const handleOrderingChange = (event) => {
-    setSelectedOrdering(event.target.value);
-    setIsOptionsVisible(false);
+        setSelectedOrdering(event.target.value);
+        setIsOptionsVisible(false);
     };
 
     const renderGroupingComponent = () => {
@@ -79,44 +73,42 @@ function Body() {
                 <div className='onselect'>
                     <div className='onselectcontainer'>
                         <div className='onSelectSubContainer'>
-                            <label className='bg-trans'>Grouping</label>
+                            <div className='bg-trans'>
+                                Grouping
+                                <FaChevronDown className='bg-white pos1'/>
+                            </div>
+                            <div className='custom-select'>
                                 <select id="option1" value={selectedGrouping} onChange={handleGroupingChange}>
                                     <option value="Status">Status</option>
                                     <option value="User">User</option>
                                     <option value="Priority">Priority</option>
                                 </select>
+                            </div>
                         </div>
 
                         <div className='onSelectSubContainer'>
-                            <label className='bg-trans'>Ordering</label>
+                            <div className='bg-trans'>
+                                Ordering
+                                <FaChevronDown className='bg-white pos2'/>
+                            </div>
+                            <div className='custom-select'>
                                 <select id="option2" value={selectedOrdering} onChange={handleOrderingChange}>
                                     <option value="Priority">Priority</option>
                                     <option value="Title">Title</option>
                                 </select>
+                            </div>
                         </div>
                     </div>
                 </div>
             )}
             <div className='body'>
-
                     {data ? (
                         <div className='groupCard'>
-                        {renderGroupingComponent()}
+                        { renderGroupingComponent() }
                         </div>
                     ) : (
                         <p>Loading...</p>
                     )}
-
-                    {/* {data ? (
-                    <>
-                        <h2>Tickets</h2>
-                            {data.tickets.map(ticket => (
-                                <Card key={ticket} ticket={ticket} users={data.users} />
-                            ))}
-                    </>
-                    ) : (
-                    <p>Loading...</p>
-                    )} */}
             </div>
         </div>
     )
