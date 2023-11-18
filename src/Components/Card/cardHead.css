@@ -1,16 +1,51 @@
 .HeadTop{
-    /* width: 500px; */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0px;
+    height: 80px;
+}
+
+.headUserIcon{
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-weight: 700;
+}
+
+.activeHead{
+    background-color: greenyellow;
+    width:8px;
+    height: 8px;
+    position: relative;
+    top: 2px;
+    left: -20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-bottom: -15px;
+}
+
+.inactiveHead{
+    background-color: #a6a9ad;
+    width:8px;
+    height: 8px;
+    position: relative;
+    top: 2px;
+    left: -20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-bottom: -15px;
 }
 
 .left{
     display: flex;
     align-items: center;
     justify-items: center;
-    gap: 15px;
+    gap: 12px;
     .title{
         color: black;
         font-weight: bold;
@@ -30,6 +65,8 @@
     }
 
     .threeDot{
+        color: #8c8f94;
         font-weight: bold;
+        padding-right: 5px;
     }
 }

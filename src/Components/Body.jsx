@@ -57,11 +57,11 @@ function Body() {
         console.log(data);
         switch (selectedGrouping) {
             case 'Status':
-                return <GroupByStatus data={data} ordering={selectedOrdering} />;
+                return <GroupByStatus data={data} grouping={selectedGrouping} ordering={selectedOrdering} />;
             case 'Priority':
-                return <GroupByPriority data={data} ordering={selectedOrdering} />;
+                return <GroupByPriority data={data} grouping={selectedGrouping} ordering={selectedOrdering} />;
             case 'User':
-                return <GroupByUser data={data} ordering={selectedOrdering} />;
+                return <GroupByUser data={data} grouping={selectedGrouping} ordering={selectedOrdering} />;
             default:
                 return null;
         }
@@ -83,7 +83,7 @@ function Body() {
                 <div className='onselect'>
                     <div className='onselectcontainer'>
                         <div className='onSelectSubContainer'>
-                            <label>Grouping</label>
+                            <label className='bg-trans'>Grouping</label>
                                 <select id="option1" value={selectedGrouping} onChange={handleGroupingChange}>
                                     <option value="Status">Status</option>
                                     <option value="User">User</option>
@@ -92,7 +92,7 @@ function Body() {
                         </div>
 
                         <div className='onSelectSubContainer'>
-                            <label>Ordering</label>
+                            <label className='bg-trans'>Ordering</label>
                                 <select id="option2" value={selectedOrdering} onChange={handleOrderingChange}>
                                     <option value="Priority">Priority</option>
                                     <option value="Title">Title</option>

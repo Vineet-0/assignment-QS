@@ -1,27 +1,122 @@
 .container{
-    display: grid;
-    grid-column: 1;
-
     border-radius: 10px;
-    
-    
-    background-color: #f4f5f8;
-    /* width: 600px; */
+    height: 100px;
+    background-color: #ffffff;
     color: black;
+    font-size: 15px;
     padding: 20px;
-    border: 2px solid red;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    /* border: 2px solid red; */
     margin-bottom: 15px;
 }
 
 .top{
-    /* display: flex; */
+    background-color: #ffffff;
+    height: 40px;
+    margin-top: -10px;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     color: #a6a9ad;
     font-weight: 600;
 }
 
-.title{
+.userId{
+    background-color: #ffffff;
+}
+
+.userIcon{
+    position: relative;
+    right:0px;
+    top:0px;
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+
+}
+
+.middle{
+    background-color: #ffffff;
+    display: flex;
+    gap:10px;
+}
+
+.status{
+    background-color: #ffffff;
+}
+
+.userTitle{
+    background-color: #ffffff;
+    color: black;
+    font-weight: bold;
     display: flex;
     flex-wrap: wrap;
+}
+
+.active{
+    background-color: greenyellow;
+    width:8px;
+    height: 8px;
+    position: relative;
+    bottom: 15px;
+    right: -350px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-bottom: -15px;
+}
+
+.inactive{
+    background-color: #a6a9ad;
+    width:8px;
+    height: 8px;
+    position: relative;
+    bottom: 15px;
+    right: -350px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-bottom: -15px;
+}
+
+
+.bottom{
+    background-color: #fff;
+    margin-top: 10px;
+    display: flex;
+    gap:10px;
+}
+
+.priority{
+    background-color: #fff;
+    width:22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #a0a3a7;
+    border-radius: 5px;
+}
+
+.cir{
+    background-color: #bec2c7;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.tag{
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:5px;
+    height: 22px;
+    padding: 0px 5px;
+    border: 1px solid #a0a3a7;
+    border-radius: 5px;
+    color: #a0a3a7;
 }

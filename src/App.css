@@ -15,3 +15,7 @@
 .HorizontalAlign::-webkit-scrollbar {
   display: none;
 }
+
+.bg-trans{
+  background-color: transparent;
+}

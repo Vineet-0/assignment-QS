@@ -3,12 +3,26 @@ import './cardHead.css';
 import { FaPlus } from "react-icons/fa6";
 import { HiDotsHorizontal } from "react-icons/hi";
 
-const CardHead = ({ title , number , icon}) => {
+const CardHead = ({ title , number ,icon, users}) => {
+
+    const userIcon = title.charAt(0).toUpperCase();
+    const user = users.find((user) => user.name === title);
+    const active = icon === undefined && user ? user.active : false;
 
     return (
         <div className='HeadTop'>
             <div className='left'>
-                {icon}
+                {icon ? (
+                <div className='icon'>{icon}</div>
+                ) : (
+                <>
+                    <div className='headUserIcon'>
+                        {userIcon}
+                    </div>
+                    {!icon && active && ( <div className='activeHead'></div>) }
+                    {!icon && !active  && ( <div className='inactiveHead'></div> )}
+                </>
+                )}
                 <div className='title'>{title}</div>
                 <div className='number'>{number}</div>
             </div>

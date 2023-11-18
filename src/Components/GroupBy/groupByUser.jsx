@@ -3,8 +3,11 @@ import CardHead from '../Card/cardHead';
 import CardBody from '../Card/cardBody';
 import './groupBy.css';
 
-function GroupByUsers({ data, Ordering }) {
+function GroupByUsers({ data,grouping, ordering }) {
   const [groupedTickets, setGroupedTickets] = useState({});
+
+  // console.log("Hello");
+  // console.log(data.users);
 
   useEffect(() => {
     if (data) {
@@ -39,13 +42,32 @@ function GroupByUsers({ data, Ordering }) {
             .sort((a, b) => a.localeCompare(b))
             .map(userName => (
               <div key={userName} className='CardWidth'>
-                <CardHead title={userName} number={groupedTickets[userName]?.length || 0}/>
-                {groupedTickets[userName] ? (
-                  groupedTickets[userName].map(ticket => (
-                    <CardBody key={ticket.id} ticket={ticket} users={data.users} />
-                  ))
-                ) : (
-                  <p>No tickets for User Name {userName}</p>
+                <CardHead
+                    title={userName}
+                    number={groupedTickets[userName]?.length || 0}
+                    users={data.users}
+                />
+                {ordering === 'Priority' && (
+                    groupedTickets[userName] ? (
+                      groupedTickets[userName]
+                      .sort((a, b) => b.priority - a.priority) // Sort by priority in decreasing order
+                      .map(ticket => (
+                        <CardBody key={ticket.id} ticket={ticket} users={data.users} grouping={grouping} />
+                      ))
+                    ) : (
+                      <p>No tickets for User Name {userName}</p>
+                    )
+                )}
+                {ordering === 'Title' && (
+                    groupedTickets[userName] ? (
+                      groupedTickets[userName]
+                      .sort((a, b) => a.title.localeCompare(b.title)) // Sort by title in increasing order
+                      .map(ticket => (
+                        <CardBody key={ticket.id} ticket={ticket} users={data.users} grouping={grouping}/>
+                      ))
+                    ) : (
+                      <p>No tickets for User Name {userName}</p>
+                    )
                 )}
               </div>
             ))}

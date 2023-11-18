@@ -1,40 +1,22 @@
 import React from 'react';
 import CardHead from '../Card/cardHead';
 import CardBody from '../Card/cardBody';
-import OrderByTitle from '../OrderBy/orderByTitle'; // Import the OrderByTitle component
 import './groupBy.css';
 
+import { FcHighPriority } from "react-icons/fc";
 import { MdSignalCellularAlt, MdSignalCellularAlt2Bar, MdSignalCellularAlt1Bar } from "react-icons/md";
+import { CgBorderStyleDashed } from "react-icons/cg";
+
 
 const priorities = [
-  {
-    id: 4,
-    name: 'Urgent',
-    icon: '🔥', // Urgent
-  },
-  {
-    id: 3,
-    name: 'High',
-    icon: <MdSignalCellularAlt />, // High
-  },
-  {
-    id: 2,
-    name: 'Medium',
-    icon: <MdSignalCellularAlt2Bar />, // Medium
-  },
-  {
-    id: 1,
-    name: 'Low',
-    icon: <MdSignalCellularAlt1Bar />, // Low
-  },
-  {
-    id: 0,
-    name: 'No Priority',
-    icon: '❓', // No Priority
-  }
+  { id: 4, name: 'Urgent', icon: <FcHighPriority className='bg-trans'/> }, // Urgent
+  { id: 3, name: 'High', icon: <MdSignalCellularAlt className='bg-trans'/>, }, // High
+  { id: 2, name: 'Medium', icon: <MdSignalCellularAlt2Bar className='bg-trans'/>, }, // Medium
+  { id: 1, name: 'Low', icon: <MdSignalCellularAlt1Bar className='bg-trans'/>, }, // Low
+  { id: 0, name: 'No Priority', icon: <CgBorderStyleDashed className='bg-trans'/>, } // No Priority
 ];
 
-function GroupByPriority({ data, ordering }) {
+function GroupByPriority({ data, grouping,ordering }) {
   const [groupedTickets, setGroupedTickets] = React.useState({});
 
   React.useEffect(() => {
@@ -63,20 +45,28 @@ function GroupByPriority({ data, ordering }) {
                 title= {priority.name}
                 number = {groupedTickets[priority.id]?.length || 0}
                 icon={priority.icon}
+                users={data.users}
               />
-              {ordering === 'Priority' ? (
-                // Render Card component for Priority ordering
-                groupedTickets[priority.id] ? (
-                  groupedTickets[priority.id].map(ticket => (
-                    <CardBody key={ticket.id} ticket={ticket} users={data.users} />
-                  ))
-                ) : (
-                  <p>No tickets for {priority.icon}</p>
-                )
-              ) : (
-                // Render OrderByTitle component for Title ordering
-                <OrderByTitle tickets={groupedTickets[priority.id]} />
-              )}
+                {ordering === 'Priority' && (
+                    groupedTickets[priority.id] ? (
+                      groupedTickets[priority.id].map(ticket => (
+                        <CardBody key={ticket.id} ticket={ticket} users={data.users} grouping={grouping} />
+                      ))
+                    ) : (
+                      <p>No tickets for {priority.icon}</p>
+                    )
+                )}
+                {ordering === 'Title' && (
+                    groupedTickets[priority.id] ? (
+                      groupedTickets[priority.id]
+                      .sort((a, b) => a.title.localeCompare(b.title)) // Sort by title in increasing order
+                      .map(ticket => (
+                        <CardBody key={ticket.id} ticket={ticket} users={data.users} grouping={grouping} />
+                      ))
+                    ) : (
+                      <p>No tickets for {priority.icon}</p>
+                    )
+                )}
             </div>
           ))}
         </div>
