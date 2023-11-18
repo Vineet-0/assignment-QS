@@ -20,6 +20,65 @@
   background-color: transparent;
 }
 
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backLog{
+  color: #e3e3e4;
+  width: 19px;
+  height: 19px;
+  font-weight: bold;
+}
+
+.progress{
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  border:2px solid #f1c94b;
+  background-color: #f1c94b;
+  color:#f4f5f8;
+}
+
+.done{
+  border-radius: 50%;
+  width: 19px;
+  height: 19px;
+  background-color: #f4f5f8;
+  color:#5d6ad1;
+}
+
+.todo{
+  color: #f4f5f8;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #e3e3e4;
+  font-weight: bold;
+}
+.todoB{
+  color: #ffffff;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #e3e3e4;
+  font-weight: bold;
+}
+
+.cancel{
+  color:#94a2b2;
+  width: 20px;
+  height: 20px;
+}
+
+.urgent{
+  color: white;
+  background-color: #fb773f;
+  border-radius: 2px;
+}
+
 @media only screen and (max-width: 767px) {
   .HorizontalAlign {
     flex-direction: column;

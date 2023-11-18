@@ -30,11 +30,11 @@ function GroupByStatus({ data, grouping, ordering }) {
   }, [data]);
 
   const specificStatuses = [
-    { title: 'Backlog', icon: <LuCircleDashed className='bg-trans'/>},
-    { title: 'Todo', icon: <MdOutlineCircle className='bg-trans'/>},
-    { title: 'In progress', icon: <FaCircleHalfStroke className='bg-trans' /> },
-    { title: 'Done', icon:<FaCircleCheck className='bg-trans' /> },
-    { title: 'Canceled', icon: <MdCancel className='bg-trans' /> },
+    { title: 'Backlog', icon: <LuCircleDashed className='bg-trans flex backLog'/>},
+    { title: 'Todo', icon: <MdOutlineCircle className='bg-trans flex todo'/>},
+    { title: 'In progress', icon: <FaCircleHalfStroke className='bg-trans flex progress' /> },
+    { title: 'Done', icon:<FaCircleCheck className='bg-trans flex done' /> },
+    { title: 'Canceled', icon: <MdCancel className='bg-trans flex cancel' /> },
   ];
 
   return (

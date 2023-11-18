@@ -1,7 +1,7 @@
 import React from 'react';
 import './cardBody.css';
 
-import { FcHighPriority } from "react-icons/fc";
+import { MdOutlinePriorityHigh } from "react-icons/md";
 import { MdSignalCellularAlt, MdSignalCellularAlt2Bar, MdSignalCellularAlt1Bar } from "react-icons/md";
 import { CgBorderStyleDashed } from "react-icons/cg";
 
@@ -13,19 +13,19 @@ import { MdCancel } from "react-icons/md";
 
 
 const priorities = [
-    { id: 4, icon: <FcHighPriority className='bg-trans'/> },             // Urgent
+    { id: 4, icon: <MdOutlinePriorityHigh className='bg-trans flex urgent'/> },             // Urgent
     { id: 3, icon: <MdSignalCellularAlt className='bg-trans'/>, },      // High
     { id: 2, icon: <MdSignalCellularAlt2Bar className='bg-trans'/>, },  // Medium
     { id: 1, icon: <MdSignalCellularAlt1Bar className='bg-trans'/>, },  // Low
     { id: 0, icon: <CgBorderStyleDashed className='bg-trans'/>, }       // No Priority
   ];
 
-const specificStatuses = [
-    { title: 'Backlog', icon: <LuCircleDashed className='bg-trans'/>},
-    { title: 'Todo', icon: <MdOutlineCircle className='bg-trans'/>},
-    { title: 'In progress', icon: <FaCircleHalfStroke className='bg-trans'/> },
-    { title: 'Done', icon:<FaCircleCheck className='bg-trans'/> },
-    { title: 'Canceled', icon: <MdCancel className='bg-trans'/> },
+  const specificStatuses = [
+    { title: 'Backlog', icon: <LuCircleDashed className='bg-trans flex backLog'/>},
+    { title: 'Todo', icon: <MdOutlineCircle className='bg-trans flex todoB'/>},
+    { title: 'In progress', icon: <FaCircleHalfStroke className='bg-trans flex progress' /> },
+    { title: 'Done', icon:<FaCircleCheck className='bg-trans flex done' /> },
+    { title: 'Canceled', icon: <MdCancel className='bg-trans flex cancel' /> },
   ];
 
 

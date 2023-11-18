@@ -6,14 +6,15 @@ import './groupBy.css';
 import { FcHighPriority } from "react-icons/fc";
 import { MdSignalCellularAlt, MdSignalCellularAlt2Bar, MdSignalCellularAlt1Bar } from "react-icons/md";
 import { CgBorderStyleDashed } from "react-icons/cg";
+import { MdOutlinePriorityHigh } from "react-icons/md";
 
 
 const priorities = [
-  { id: 4, name: 'Urgent', icon: <FcHighPriority className='bg-trans'/> }, // Urgent
-  { id: 3, name: 'High', icon: <MdSignalCellularAlt className='bg-trans'/>, }, // High
-  { id: 2, name: 'Medium', icon: <MdSignalCellularAlt2Bar className='bg-trans'/>, }, // Medium
-  { id: 1, name: 'Low', icon: <MdSignalCellularAlt1Bar className='bg-trans'/>, }, // Low
-  { id: 0, name: 'No Priority', icon: <CgBorderStyleDashed className='bg-trans'/>, } // No Priority
+  { id: 4, name: 'Urgent', icon: <MdOutlinePriorityHigh className='bg-trans flex urgent'/> }, // Urgent
+  { id: 3, name: 'High', icon: <MdSignalCellularAlt className='bg-trans flex'/>, }, // High
+  { id: 2, name: 'Medium', icon: <MdSignalCellularAlt2Bar className='bg-trans flex'/>, }, // Medium
+  { id: 1, name: 'Low', icon: <MdSignalCellularAlt1Bar className='bg-trans flex'/>, }, // Low
+  { id: 0, name: 'No Priority', icon: <CgBorderStyleDashed className='bg-trans flex'/>, } // No Priority
 ];
 
 function GroupByPriority({ data, grouping,ordering }) {
