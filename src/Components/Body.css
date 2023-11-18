@@ -6,13 +6,6 @@
     background-color: #ffffff;
 }
 
-@media only screen and (max-width: 767px) {
-    .head{
-        padding: 10px 30px;
-        background-color: #ffffff;
-    }
-}
-
 .btn{
     background-color: #ffffff;
     color: #53555a;
@@ -41,7 +34,7 @@
 
 .onselect{
     z-index: 10;
-    position: fixed;
+    position: absolute;
     top: 65px;
     left: 60px;
 
@@ -85,5 +78,26 @@
 @media only screen and (max-width: 767px) {
     .groupCard{
         padding:0px 20px;
+    }
+
+    .head{
+        padding: 10px 30px;
+        background-color: #ffffff;
+    }
+
+    .onselect{
+        z-index: 10;
+        position: absolute;
+        top: 55px;
+        left: 30px;
+    
+        width: 250px;
+        
+        padding: 15px 20px;
+        color: #a1a1a3;
+        font-weight: 600;
+        background-color: #f8f9fb;
+        border: 1px solid #e4e4e6;
+        border-radius: 10px;
     }
 }
