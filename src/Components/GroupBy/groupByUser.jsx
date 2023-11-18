@@ -6,8 +6,6 @@ import './groupBy.css';
 function GroupByUsers({ data,grouping, ordering }) {
   const [groupedTickets, setGroupedTickets] = useState({});
 
-  // console.log("Hello");
-  // console.log(data.users);
 
   useEffect(() => {
     if (data) {
@@ -43,6 +41,7 @@ function GroupByUsers({ data,grouping, ordering }) {
             .map(userName => (
               <div key={userName} className='CardWidth'>
                 <CardHead
+                    userName={userName}
                     title={userName}
                     number={groupedTickets[userName]?.length || 0}
                     users={data.users}

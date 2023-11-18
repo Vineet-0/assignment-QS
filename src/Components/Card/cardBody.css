@@ -62,7 +62,7 @@
 
 .active{
     z-index: 10;
-    background-color: #a6a9ad;
+    background-color: orange;
     width:8px;
     height: 8px;
     position: relative;

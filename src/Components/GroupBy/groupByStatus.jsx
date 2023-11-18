@@ -13,7 +13,6 @@ function GroupByStatus({ data, grouping, ordering }) {
   const [groupedTickets, setGroupedTickets] = useState({});
 
   useEffect(() => {
-    // console.log(ordering);
     if (data) {
         // Group tickets by the specific statuses
         const groupedData = data.tickets.reduce((acc, ticket) => {
@@ -25,8 +24,6 @@ function GroupByStatus({ data, grouping, ordering }) {
             return acc;
         }, {});
 
-        // console.log('Hello');
-        // console.log(groupedData);
 
         setGroupedTickets(groupedData);
     }

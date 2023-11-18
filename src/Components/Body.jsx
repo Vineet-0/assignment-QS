@@ -29,9 +29,6 @@ function Body() {
     
             // Set the data to your component state
             setData(responseData);
-    
-            // Now you can work with the data
-            console.log(responseData);
           })
           .catch(error => {
             // Handle errors here
@@ -54,7 +51,6 @@ function Body() {
     };
 
     const renderGroupingComponent = () => {
-        console.log(data);
         switch (selectedGrouping) {
             case 'Status':
                 return <GroupByStatus data={data} grouping={selectedGrouping} ordering={selectedOrdering} />;

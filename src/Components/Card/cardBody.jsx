@@ -31,7 +31,7 @@ const specificStatuses = [
 
 const CardBody = ({ ticket, users, grouping }) => {
   const user = users.find((user) => user.id === ticket.userId);
-  const active = user ? user.active : false;
+  const active = user ? user.available : false;
   const userName =
     grouping === 'User'
       ? ' '
