@@ -1,9 +1,8 @@
 .outer{
-    background-color: white;
+
 }
 .head{
     padding: 20px 60px;
-    width: fit-content;
     background-color: #ffffff;
 }
 
@@ -50,16 +49,17 @@
 .onselectcontainer{
     display: flex;
     flex-direction: column;
+    background-color: transparent;
     gap:15px;
 }
 
 .onSelectSubContainer{
     display: flex;
     flex-direction: row;
+    background-color: transparent;
+    /* background-color: #f8f9fb; */
     justify-content: space-between;
-    label{
-        margin-left: 20px;
-    }
+    text-decoration: none;
 }
 
 

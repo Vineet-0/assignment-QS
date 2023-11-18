@@ -16,6 +16,20 @@ function GroupByUsers({ data }) {
         return acc;
       }, {});
 
+      // Sort tickets within each user group by user name
+      Object.keys(groupedData).forEach(userId => {
+        groupedData[userId].sort((a, b) => {
+          const userA = data.users.find(user => user.id === a.userId);
+          const userB = data.users.find(user => user.id === b.userId);
+
+          if (userA && userB) {
+            return userA.name.localeCompare(userB.name);
+          }
+
+          return 0;
+        });
+      });
+
       setGroupedTickets(groupedData);
     }
   }, [data]);
@@ -45,6 +59,7 @@ function GroupByUsers({ data }) {
 }
 
 export default GroupByUsers;
+
 
 // import React, { useState , useEffect } from 'react'
 // import Card from '../Card'

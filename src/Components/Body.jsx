@@ -45,10 +45,12 @@ function Body() {
 
     const handleGroupingChange = (event) => {
     setSelectedGrouping(event.target.value);
+    setIsOptionsVisible(false);
     };
 
     const handleOrderingChange = (event) => {
     setSelectedOrdering(event.target.value);
+    setIsOptionsVisible(false);
     };
 
     const renderGroupingComponent = () => {
