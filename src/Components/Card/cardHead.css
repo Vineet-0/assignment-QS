@@ -1,54 +1,68 @@
 .HeadTop{
     z-index: 1;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     height: 80px;
+
     .urgent{
-        color: white;
-        background-color: #fb773f;
+        border: 2px solid #fb773f;
         border-radius: 2px;
-        border: 2px solid #fb773f
+
+        background-color: #fb773f;
+        color: white;
       }
 }
 
 .headUserIcon{
-    background-color: #35383d;
-    width: 25px;
-    height: 25px;
-    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    color: white;
+    
+    width: 25px;
+    height: 25px;
+
+    font-size: 14px;
     font-weight: 700;
+
+    border-radius: 50%;
+
+    background-color: #35383d;
+    color: white;
 }
 
 .activeHead{
-    background-color: orange;
-    width: 10px;
-    height: 10px;
     position: relative;
     top: 1px;
     left: -20px;
+
+    width: 10px;
+    height: 10px;
+
     border: 2px solid white;
     border-radius: 50%;
     margin-bottom: -15px;
     margin-right: -20px;
+
+    background-color: orange;
 }
 
 .inactiveHead{
-    background-color: #a6a9ad;
-    width: 10px;
-    height: 10px;
     position: relative;
     top: 1px;
     left: -20px;
+
+    width: 10px;
+    height: 10px;
+
     border: 2px solid white;
     border-radius: 50%;
     margin-bottom: -15px;
     margin-right: -20px;
+
+    background-color: #a6a9ad;
 }
 
 .left{
@@ -56,14 +70,18 @@
     align-items: center;
     justify-items: center;
     gap: 12px;
+
     color: #f4f5f8;
+
     .title{
-        color: #35383d;
         font-weight: bold;
+
+        color: #35383d;
     }
     .number{
-       color: #8c8f94;
-       font-weight: 600;
+        font-weight: 600;
+
+        color: #8c8f94;
     }
 }
 
@@ -77,9 +95,11 @@
     }
 
     .threeDot{
-        color: #8c8f94;
         font-weight: bold;
+
         padding-right: 5px;
+
+        color: #8c8f94;
     }
 }
 
@@ -91,12 +111,4 @@
     .HeadTop{
         margin-inline:20px;
     }
-    /* .HeadTop:first-child{
-        margin-top: 0px;
-    }
-
-    .HeadTop:nth-child(n+2)
-    {
-        margin-top: -10px;
-    } */
 }

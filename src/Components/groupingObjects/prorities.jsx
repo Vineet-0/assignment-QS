@@ -16,22 +16,22 @@ const priorities = [
     {
         id: 3,
         name: 'High',
-        icon: <High className='bg-trans flex priority-color greyy'/>,
+        icon: <High className='bg-trans flex'/>,
     },
     {
         id: 2,
         name: 'Medium',
-        icon: <Medium className='bg-trans flex priority-color greyy'/>,
+        icon: <Medium className='bg-trans flex'/>,
     },
     {
         id: 1,
         name: 'Low',
-        icon: <Low className='bg-trans flex priority-color greyy'/>,
+        icon: <Low className='bg-trans flex'/>,
     },
     {
         id: 0,
         name: 'No Priority',
-        icon: <CgBorderStyleDashed className='bg-trans flex priority-color'/>,
+        icon: <CgBorderStyleDashed className='bg-trans flex'/>,
     }
 ];
 

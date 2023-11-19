@@ -1,106 +1,83 @@
 *{
     box-sizing: border-box;
 }
+
 .head{
     padding: 20px 60px;
+
     background-color: #ffffff;
 }
 
 .btn{
-    background-color: #ffffff;
-    color: #53555a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
     
     text-align: center;
     text-decoration: none;
-    display: flex;
-    justify-content: space-between;
-
+    
     font-size: 16px;
     font-weight: 700;
 
+    padding: 8px 15px;
     border: none;
     border: 2px solid  #e7e8ea;
     border-radius: 8px;
 
-    padding: 8px 15px;
-    
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    background-color: #ffffff;
+    color: #53555a;
 }
 
-
-
-
 .custom-select {
-    min-width: 120px;
     z-index: 9;
+
+    min-width: 120px;
+
     background-color: #fff;
-    /* position: relative; */
 }
 
 select {
     appearance: none;
-    /*  safari  */
+
     -webkit-appearance: none;
-    /*  other styles for aesthetics */
+
     width: 100%;
+
     font-size: 15px;
     font-weight: 600;
+
     padding: 4px 10px;
-    background-color: transparent;
-    /* background-color: #fff; */
     border: 1px solid #caced1;
     border-radius: 0.25rem;
+
+    background-color: transparent;
     color: #000;
+
     cursor: pointer;
 }
 
-/* .custom-select::before,
-.custom-select::after {
-    --size: 0.3rem;
-    content: "";
-    position: absolute;
-    right: 1rem;
-    pointer-events: none;
-} */
-
-/* .custom-select::before {
-    border-left: var(--size) solid transparent;
-    border-right: var(--size) solid transparent;
-    border-bottom: var(--size) solid black;
-    top: 40%;
-}
-
-.custom-select::after {
-    border-left: var(--size) solid transparent;
-    border-right: var(--size) solid transparent;
-    border-top: var(--size) solid black;
-    top: 55%;
-} */
-
-
-
-
-
-
-.onselect{
+.onSelect{
     z-index: 10;
+
     position: absolute;
     top: 65px;
     left: 60px;
 
     width: 300px;
-    padding: 15px 20px;
-    color: #a1a1a3;
 
-    font-weight: 600;
-    background-color: #f8f9fb;
+    font-weight: 700;
+    
+    padding: 15px 20px;
+
     border: 1px solid #e4e4e6;
     border-radius: 10px;
+
+    background-color: #f8f9fb;
+    color: #a1a1a3;
 }
 
-.onselectcontainer{
+.onSelectContainer{
     display: flex;
     flex-direction: column;
     background-color: transparent;
@@ -110,63 +87,66 @@ select {
 .onSelectSubContainer{
     display: flex;
     flex-direction: row;
-    background-color: transparent;
     align-items: center;
     justify-content: space-between;
+
     text-decoration: none;
+
     font-size: 15px;
+
+    background-color: transparent;
 }
 
 .pos1{
-    position: absolute;
     z-index: 10;
+
+    position: absolute;
     top:22px;
     right: 25px;
+
     background-color: transparent;
 }
 
 .pos2{
-    position: absolute;
     z-index: 10;
+
+    position: absolute;
     top:65px;
     right: 25px;
+
     background-color: transparent;
 }
 
-
-
-
-
-
 .body{
-    background-color: #f4f5f8;
     margin-bottom: 100px;
+
+    background-color: #f4f5f8;
 }
 
 
 @media only screen and (max-width: 767px) {
-    .groupCard{
-        /* padding:0px 0px; */
-    }
-
     .head{
         padding: 10px 30px;
+
         background-color: #ffffff;
     }
 
     .onselect{
         z-index: 10;
+
         position: absolute;
         top: 55px;
         left: 30px;
     
         width: 250px;
         
-        padding: 15px 20px;
-        color: #a1a1a3;
         font-weight: 600;
-        background-color: #f8f9fb;
+        
+        padding: 15px 20px;
         border: 1px solid #e4e4e6;
         border-radius: 10px;
+
+        background-color: #f8f9fb;
+        color: #a1a1a3;
     }
 }

@@ -6,19 +6,6 @@
   background-color: white;
 }
 
-.HorizontalAlign{
-  display: flex;
-  overflow: scroll;
-  padding: 0px 30px;
-  margin: 0px 20px;
-  gap: 50px;
-}
-
-
-.HorizontalAlign::-webkit-scrollbar {
-  display: none;
-}
-
 .bg-trans{
   background-color: transparent;
 }
@@ -30,63 +17,46 @@
 }
 
 .backLog{
-  color: #e3e3e4;
   width: 20px;
   height: 20px;
+
   font-weight: bold;
+
+  color: #e3e3e4;
 }
 
 .progress{
-  border-radius: 50%;
   width: 18px;
   height: 18px;
+
   border: 2px solid #f1c94b;
+  border-radius: 50%;
+
   background-color: #f1c94b;
 }
 
 .done{
-  border-radius: 50%;
   width: 19px;
   height: 19px;
+
+  border-radius: 50%;
+
   background-color: #f4f5f8;
   color:#5d6ad1;
 }
 
 .todo{
-  color: #e3e3e4;
-  width: 22px;
-  height: 22px;
-  font-weight: bold;
+    width: 22px;
+    height: 22px;
+    
+    font-weight: bold;
+
+    color: #e3e3e4;
 }
 
 .cancel{
-  color:#94a2b2;
-  width: 21px;
-  height: 21px;
-}
+    width: 21px;
+    height: 21px;
 
-/* .urgent{
-  color: white;
-  background-color: #fb773f;
-  border-radius: 2px;
-  border: 2px solid #fb773f
-} */
-
-.priority-color{
-  color: #696d73;
-}
-
-@media only screen and (max-width: 767px) {
-  .HorizontalAlign {
-    flex-direction: column;
-    gap: 0px;
-    padding: 0px 0px;
-    margin: 0px 0px;
-  }
-  .CardWidth{
-    padding-bottom: 8px;
-  }
-  /* .CardWidth:not(:first-child) {
-    margin-top: -0px;
-} */
+    color:#94a2b2;
 }

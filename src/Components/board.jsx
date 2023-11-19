@@ -66,7 +66,7 @@ function Body() {
     };
 
     return (
-        <div className='outer'>
+        <div>
             <div className="head">
                 <button
                     className='btn'
@@ -78,8 +78,8 @@ function Body() {
                 </button>
             </div>
             {isOptionsVisible && (
-                <div className='onselect'>
-                    <div className='onselectcontainer'>
+                <div className='onSelect'>
+                    <div className='onSelectContainer'>
                         <div className='onSelectSubContainer'>
                             <div className='bg-trans'>
                                 Grouping
