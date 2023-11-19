@@ -6,6 +6,10 @@ import { MdSignalCellularAlt2Bar } from "react-icons/md";
 import { MdSignalCellularAlt1Bar } from "react-icons/md";
 import { CgBorderStyleDashed } from "react-icons/cg";
 
+import High from '../PriorityIcons/High.jsx'
+import Medium from '../PriorityIcons/Medium.jsx';
+import Low from '../PriorityIcons/Low.jsx';
+
 const priorities = [
     {
         id: 4,
@@ -15,22 +19,25 @@ const priorities = [
     {
         id: 3,
         name: 'High',
-        icon: <MdSignalCellularAlt className='bg-trans flex'/>
+        // icon: <MdSignalCellularAlt className='bg-trans flex priority-color'/>
+        icon: <High className='bg-trans flex priority-color'/>
     },
     {
         id: 2,
         name: 'Medium',
-        icon: <MdSignalCellularAlt2Bar className='bg-trans flex'/>
+        // icon: <MdSignalCellularAlt2Bar className='bg-trans flex priority-color'/>
+        icon: <Medium className='bg-trans flex priority-color'/>
     },
     {
         id: 1,
         name: 'Low',
-        icon: <MdSignalCellularAlt1Bar className='bg-trans flex'/>
+        // icon: <MdSignalCellularAlt1Bar className='bg-trans flex priority-color'/>
+        icon: <Low className='bg-trans flex priority-color'/>
     },
     {
         id: 0,
         name: 'No Priority',
-        icon: <CgBorderStyleDashed className='bg-trans flex'/>
+        icon: <CgBorderStyleDashed className='bg-trans flex priority-color'/>
     }
 ];
 

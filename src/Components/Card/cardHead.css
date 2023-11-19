@@ -1,4 +1,5 @@
 .HeadTop{
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -19,11 +20,11 @@
 
 .activeHead{
     background-color: orange;
-    width:8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     position: relative;
     top: 1px;
-    left: -21px;
+    left: -20px;
     border: 2px solid white;
     border-radius: 50%;
     margin-bottom: -15px;
@@ -32,11 +33,11 @@
 
 .inactiveHead{
     background-color: #a6a9ad;
-    width:8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     position: relative;
     top: 1px;
-    left: -21px;
+    left: -20px;
     border: 2px solid white;
     border-radius: 50%;
     margin-bottom: -15px;
@@ -48,12 +49,14 @@
     align-items: center;
     justify-items: center;
     gap: 12px;
+    color: #f4f5f8;
     .title{
         color: black;
         font-weight: bold;
     }
     .number{
        color: #8c8f94;
+       font-weight: 600;
     }
 }
 
@@ -78,6 +81,14 @@
         margin: 0px 20px;
     }
     .HeadTop{
-        margin: 0px 20px;
+        margin-inline:20px;
     }
+    /* .HeadTop:first-child{
+        margin-top: 0px;
+    }
+
+    .HeadTop:nth-child(n+2)
+    {
+        margin-top: -10px;
+    } */
 }

@@ -33,7 +33,7 @@
 
 
 .custom-select {
-    min-width: 100px;
+    min-width: 120px;
     z-index: 9;
     background-color: #fff;
     /* position: relative; */
@@ -47,7 +47,7 @@ select {
     width: 100%;
     font-size: 15px;
     font-weight: 600;
-    padding: 4px 6px;
+    padding: 4px 10px;
     background-color: transparent;
     /* background-color: #fff; */
     border: 1px solid #caced1;
@@ -114,6 +114,7 @@ select {
     align-items: center;
     justify-content: space-between;
     text-decoration: none;
+    font-size: 15px;
 }
 
 .pos1{
@@ -139,6 +140,7 @@ select {
 
 .body{
     background-color: #f4f5f8;
+    margin-bottom: 100px;
 }
 
 .groupCard{

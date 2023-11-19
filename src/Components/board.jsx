@@ -15,12 +15,15 @@ function Body() {
 
     const [isOptionsVisible, setIsOptionsVisible] = useState(false);
 
-    const [selectedGrouping, setSelectedGrouping] = useState('Status');
-    const [selectedOrdering, setSelectedOrdering] = useState('Priority');
+    const [selectedGrouping, setSelectedGrouping] = useState(
+        localStorage.getItem('selectedGrouping') || 'Status'
+    );
+    const [selectedOrdering, setSelectedOrdering] = useState(
+        localStorage.getItem('selectedOrdering') || 'Priority'
+    );
 
     
     useEffect(() => {
-
         getBodyData()
             .then(response => {
                 setData(response.data);
@@ -29,6 +32,11 @@ function Body() {
                 console.error(error);
             });
     }, []);
+
+    useEffect(() => {
+        localStorage.setItem('selectedGrouping', selectedGrouping);
+        localStorage.setItem('selectedOrdering', selectedOrdering);
+    }, [selectedGrouping, selectedOrdering]);
 
     const handleButtonClick = () => {
         setIsOptionsVisible(!isOptionsVisible);
