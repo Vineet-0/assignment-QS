@@ -9,7 +9,8 @@
 .HorizontalAlign{
   display: flex;
   overflow: scroll;
-  padding: 0px 50px;
+  padding: 0px 30px;
+  margin: 0px 20px;
   gap: 50px;
 }
 
@@ -79,7 +80,8 @@
   .HorizontalAlign {
     flex-direction: column;
     gap: 0px;
-    padding: 0px 10px;
+    padding: 0px 0px;
+    margin: 0px 0px;
   }
   .CardWidth{
     padding-bottom: 8px;
