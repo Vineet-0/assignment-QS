@@ -20,6 +20,7 @@ const CardBody = ({ ticket, users, grouping }) => {
 
     const status = statuses.find(s => s.title === ticket.status);
 
+    // const tik = ['Hello','Hi','I','Am','Vineet','.','Hello','Hi','I','Am','Vineet','.']
     return (
         <div className='container'>
             <div className='top'>
@@ -29,7 +30,7 @@ const CardBody = ({ ticket, users, grouping }) => {
                         {grouping !== 'User' && active && ( <div className='active'></div>) }
                         {grouping !== 'User' && !active  && ( <div className='inactive'></div> )}
                         <div className='userIcon'>
-                        {userName}
+                            {userName}
                         </div>
                     </div>  
                 )}
@@ -40,20 +41,31 @@ const CardBody = ({ ticket, users, grouping }) => {
                         {status ? status.icon : null}
                     </div>
                 )}
-                <div className='userTitle'>{ticket.title}</div>
+                <div className='userTitle'>
+                    {ticket.title}
+                </div>
             </div>
             <div className='bottom'>
                 {grouping !== 'Priority' && (
-                    <div className='priority'>
+                    <div className='priority priority-color'>
                         {priority.icon}
                     </div>
                 )}
-                <div className='tag'>
+                {/* {tik.map((tag, index) => ( */}
+                {ticket.tag.map((tag, index) => (
+                    <div className='tag'>
+                        <div className='cir'>
+
+                        </div>
+                        {tag}
+                    </div>
+                ))}
+                {/* <div className='tag'>
                     <div className='cir'>
 
                     </div>
                     {ticket.tag}
-                </div> 
+                </div> */}
             </div>
 
         </div>

@@ -143,13 +143,10 @@ select {
     margin-bottom: 100px;
 }
 
-.groupCard{
-    padding:0px 50px;
-}
 
 @media only screen and (max-width: 767px) {
     .groupCard{
-        padding:0px 0px;
+        /* padding:0px 0px; */
     }
 
     .head{

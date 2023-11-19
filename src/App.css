@@ -9,8 +9,10 @@
 .HorizontalAlign{
   display: flex;
   overflow: scroll;
-  gap: 40px;
+  padding: 0px 50px;
+  gap: 50px;
 }
+
 
 .HorizontalAlign::-webkit-scrollbar {
   display: none;
@@ -62,12 +64,12 @@
   height: 21px;
 }
 
-.urgent{
+/* .urgent{
   color: white;
   background-color: #fb773f;
   border-radius: 2px;
   border: 2px solid #fb773f
-}
+} */
 
 .priority-color{
   color: #696d73;
@@ -77,5 +79,12 @@
   .HorizontalAlign {
     flex-direction: column;
     gap: 0px;
+    padding: 0px 10px;
   }
+  .CardWidth{
+    padding-bottom: 8px;
+  }
+  /* .CardWidth:not(:first-child) {
+    margin-top: -0px;
+} */
 }

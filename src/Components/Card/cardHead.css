@@ -4,12 +4,19 @@
     align-items: center;
     justify-content: space-between;
     height: 80px;
+    .urgent{
+        color: white;
+        background-color: #fb773f;
+        border-radius: 2px;
+        border: 2px solid #fb773f
+      }
 }
 
 .headUserIcon{
-    background-color: black;
-    width: 30px;
-    height: 30px;
+    background-color: #35383d;
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,7 +58,7 @@
     gap: 12px;
     color: #f4f5f8;
     .title{
-        color: black;
+        color: #35383d;
         font-weight: bold;
     }
     .number{
@@ -75,6 +82,7 @@
         padding-right: 5px;
     }
 }
+
 
 @media only screen and (max-width: 767px) {
     .container{

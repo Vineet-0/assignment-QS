@@ -109,6 +109,7 @@ function Body() {
                     </div>
                 </div>
             )}
+            
             <div className='body'>
                     {data ? (
                         <div className='groupCard'>
