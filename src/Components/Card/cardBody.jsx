@@ -1,8 +1,8 @@
 import React from 'react';
 import './cardBody.css';
 
-import priorities from '../GroupingObjects/prorities.jsx'
-import statuses from '../GroupingObjects/statuses.jsx'
+import priorities from '../GroupingObjects/Prorities.jsx'
+import statuses from '../GroupingObjects/Statuses.jsx'
 
 
 
@@ -20,7 +20,6 @@ const CardBody = ({ ticket, users, grouping }) => {
 
     const status = statuses.find(s => s.title === ticket.status);
 
-    // const tik = ['Hello','Hi','I','Am','Vineet','.','Hello','Hi','I','Am','Vineet','.']
     return (
         <div className='container'>
             <div className='top'>
@@ -51,7 +50,6 @@ const CardBody = ({ ticket, users, grouping }) => {
                         {priority.icon}
                     </div>
                 )}
-                {/* {tik.map((tag, index) => ( */}
                 {ticket.tag.map((tag, index) => (
                     <div className='tag'>
                         <div className='cir'>
@@ -60,12 +58,6 @@ const CardBody = ({ ticket, users, grouping }) => {
                         {tag}
                     </div>
                 ))}
-                {/* <div className='tag'>
-                    <div className='cir'>
-
-                    </div>
-                    {ticket.tag}
-                </div> */}
             </div>
 
         </div>

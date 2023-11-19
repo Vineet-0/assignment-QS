@@ -116,7 +116,7 @@ function Body() {
                         { renderGroupingComponent() }
                         </div>
                     ) : (
-                        <p>Loading...</p>
+                        <p></p>
                     )}
             </div>
         </div>
