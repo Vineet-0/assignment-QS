@@ -1,7 +1,7 @@
 import React from 'react';
 import './cardBody.css';
 
-import priorities from '../GroupingObjects/prorities.jsx'
+import priorities from '../GroupingObjects/priorities.jsx'
 import statuses from '../GroupingObjects/statuses.jsx'
 
 
