@@ -10,6 +10,12 @@
     background-color: #ffffff;
     color: black;
     box-shadow: rgba(1, 1, 1, 0.2) 0px 2px 8px 0px;
+
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.03);
 }
 
 .top{
@@ -199,5 +205,8 @@
     }
     .container:last-child {
         margin-bottom: 0px;
+    }
+    .container:hover {
+        transform: none;
     }
 }
