@@ -3,7 +3,7 @@ import CardHead from '../Card/cardHead.jsx';
 import CardBody from '../Card/cardBody.jsx';
 import './groupBy.css';
 
-import priorities from '../GroupingObjects/priorities.jsx'
+import priorities from '../groupingObjects/priorities.jsx'
 
 
 function GroupByPriority({ data, grouping,ordering }) {
@@ -39,7 +39,7 @@ function GroupByPriority({ data, grouping,ordering }) {
                             {ordering === 'Priority' && (
                                 groupedTickets[priority.id] ? (
                                 groupedTickets[priority.id].map(ticket => (
-                                    <CardBody key={`${priority.id}-${ticket.id}`} ticket={ticket} users={data.users} grouping={grouping} />
+                                    <CardBody key={ticket.id} ticket={ticket} users={data.users} grouping={grouping} />
                                 ))
                                 ) : (
                                 <></>
@@ -50,7 +50,7 @@ function GroupByPriority({ data, grouping,ordering }) {
                                 groupedTickets[priority.id]
                                 .sort((a, b) => a.title.localeCompare(b.title)) // Sort by title in increasing order
                                 .map(ticket => (
-                                    <CardBody key={`${priority.id}-${ticket.id}`} ticket={ticket} users={data.users} grouping={grouping} />
+                                    <CardBody key={ticket.id} ticket={ticket} users={data.users} grouping={grouping} />
                                 ))
                                 ) : (
                                 <></>
