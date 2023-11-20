@@ -50,7 +50,7 @@ const CardBody = ({ ticket, users, grouping }) => {
                         {priority.icon}
                     </div>
                 )}
-                {ticket.tag.map((tag, index) => (
+                {ticket.tag.map((tag) => (
                     <div className='tag'>
                         <div className='cir'>
 
