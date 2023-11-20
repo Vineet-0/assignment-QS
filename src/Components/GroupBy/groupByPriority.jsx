@@ -3,7 +3,7 @@ import CardHead from '../Card/cardHead';
 import CardBody from '../Card/cardBody';
 import './groupBy.css';
 
-import priorities from '../GroupingObjects/Prorities.jsx'
+import priorities from '../GroupingObjects/prorities.jsx'
 
 
 function GroupByPriority({ data, grouping,ordering }) {

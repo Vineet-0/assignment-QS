@@ -3,7 +3,7 @@ import CardHead from '../Card/cardHead';
 import CardBody from '../Card/cardBody';
 import './groupBy.css';
 
-import statuses from '../GroupingObjects/Statuses.jsx'
+import statuses from '../GroupingObjects/statuses.jsx'
 
 
 function GroupByStatus({ data, grouping, ordering }) {
