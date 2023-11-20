@@ -1,6 +1,6 @@
 import React from 'react';
-import CardHead from '../Card/cardHead';
-import CardBody from '../Card/cardBody';
+import CardHead from '../Card/cardHead.jsx';
+import CardBody from '../Card/cardBody.jsx';
 import './groupBy.css';
 
 import priorities from '../GroupingObjects/priorities.jsx'
@@ -11,7 +11,6 @@ function GroupByPriority({ data, grouping,ordering }) {
 
     React.useEffect(() => {
         if (data) {
-        // Group tickets by priority
         const groupedData = data.tickets.reduce((acc, ticket) => {
             const priority = ticket.priority;
             if (!acc[priority]) {
@@ -40,7 +39,7 @@ function GroupByPriority({ data, grouping,ordering }) {
                             {ordering === 'Priority' && (
                                 groupedTickets[priority.id] ? (
                                 groupedTickets[priority.id].map(ticket => (
-                                    <CardBody key={ticket.id} ticket={ticket} users={data.users} grouping={grouping} />
+                                    <CardBody key={`${priority.id}-${ticket.id}`} ticket={ticket} users={data.users} grouping={grouping} />
                                 ))
                                 ) : (
                                 <></>
@@ -51,7 +50,7 @@ function GroupByPriority({ data, grouping,ordering }) {
                                 groupedTickets[priority.id]
                                 .sort((a, b) => a.title.localeCompare(b.title)) // Sort by title in increasing order
                                 .map(ticket => (
-                                    <CardBody key={ticket.id} ticket={ticket} users={data.users} grouping={grouping} />
+                                    <CardBody key={`${priority.id}-${ticket.id}`} ticket={ticket} users={data.users} grouping={grouping} />
                                 ))
                                 ) : (
                                 <></>

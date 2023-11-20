@@ -16,7 +16,7 @@ function Body() {
     const [isOptionsVisible, setIsOptionsVisible] = useState(false);
 
     const [selectedGrouping, setSelectedGrouping] = useState(
-        localStorage.getItem('selectedGrouping') || 'Status'
+        localStorage.getItem('selectedGrouping') || 'User'
     );
     const [selectedOrdering, setSelectedOrdering] = useState(
         localStorage.getItem('selectedOrdering') || 'Priority'
