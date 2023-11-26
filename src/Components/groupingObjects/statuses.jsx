@@ -6,6 +6,7 @@ import { FaCircleHalfStroke } from "react-icons/fa6";
 import { FaCircleCheck } from "react-icons/fa6";
 import { MdCancel } from "react-icons/md";
 
+// Array representing different statuses along with their icons
 const statuses = [
     {
         title: 'Backlog',
@@ -27,6 +28,7 @@ const statuses = [
         title: 'Canceled',
         icon: <MdCancel className='bg-trans flex cancel'/>
     },
-  ];
+];
 
+// Exporting the statuses array for use in other components
 export default statuses;

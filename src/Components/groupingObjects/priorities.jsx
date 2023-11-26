@@ -3,10 +3,11 @@ import React from 'react';
 import { MdOutlinePriorityHigh } from "react-icons/md";
 import { CgBorderStyleDashed } from "react-icons/cg";
 
-import High from '../PriorityIcons/High.jsx'
+import High from '../PriorityIcons/High.jsx';
 import Medium from '../PriorityIcons/Medium.jsx';
 import Low from '../PriorityIcons/Low.jsx';
 
+// Array representing different priority levels along with their name & icons
 const priorities = [
     {
         id: 4,
@@ -35,4 +36,5 @@ const priorities = [
     }
 ];
 
+// Exporting the priorities array for use in other components
 export default priorities;
